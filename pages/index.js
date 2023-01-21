@@ -12,7 +12,7 @@ const Home = () => {
   const callGenerateEndpoint = async () => {
     setIsGenerating(true);
 
-    // console.log("Calling OpenAI...");
+    console.log("Calling OpenAI...");
     const response = await fetch("/api/generate", {
       method: "POST",
       headers: {
@@ -23,7 +23,7 @@ const Home = () => {
 
     const data = await response.json();
     const { output } = data;
-    // console.log("OpenAI replied...", output.text);
+    console.log("OpenAI replied...", output.text);
 
     setApiOutput(`${output.text}`);
     setIsGenerating(false);
